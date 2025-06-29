@@ -19,3 +19,21 @@ tasks.test {
 kotlin {
     jvmToolchain(20)
 }
+
+tasks.register<Jar>("fatJar") {
+    group = "build"
+    archiveBaseName.set("KotSpam")
+    archiveClassifier.set("")
+    archiveVersion.set("1.0")
+
+    manifest {
+        attributes["Main-Class"] = "id.neotica.MainKt" // change to your main class
+    }
+
+    from(sourceSets.main.get().output)
+
+    dependsOn(configurations.runtimeClasspath)
+    from({
+        configurations.runtimeClasspath.get().filter { it.name.endsWith("jar") }.map { zipTree(it) }
+    })
+}
