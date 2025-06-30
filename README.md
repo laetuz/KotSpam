@@ -6,7 +6,7 @@
 
 ## 📦 Download
 
-👉 [**Download KotSpam.jar from the latest release**](https://github.com/laetuz/KotSpam/releases/download/1.0/KotSpam-1.0.jar)
+👉 [**Download KotSpam.jar from the latest release**](https://github.com/laetuz/KotSpam/releases)
 
 No need to build — just download and run:
 
