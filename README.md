@@ -11,7 +11,7 @@
 No need to build — just download and run:
 
 ```bash
-java -jar KotSpam-1.0.jar
+java -jar KotSpam.jar
 ```
 
 ## ⚙️ Features
