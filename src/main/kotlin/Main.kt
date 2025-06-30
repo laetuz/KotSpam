@@ -99,7 +99,10 @@ fun main() {
                     "enter" -> AdbInput.sendEnter()
                     "write" -> {
                         if (input.lowercase() == "exit") break
-                        AdbInput.sendText(input)
+                        print("Write message: ")
+                        val writeInput = readlnOrNull() ?: break
+
+                        AdbInput.sendText(writeInput)
                         Thread.sleep(200)
                         AdbInput.sendEnter()
                         Thread.sleep(300)
