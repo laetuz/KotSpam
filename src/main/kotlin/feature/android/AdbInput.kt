@@ -1,4 +1,4 @@
-package id.neotica.android
+package id.neotica.feature.android
 
 object AdbInput {
 

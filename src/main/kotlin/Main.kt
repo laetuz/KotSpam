@@ -1,9 +1,10 @@
 package id.neotica
 
-import id.neotica.android.AdbInput
+import id.neotica.feature.android.AdbInput
 import id.neotica.bot.pasteBot
 import id.neotica.bot.typeBot
 import id.neotica.bot.typeBot2
+import id.neotica.feature.adbTerminalInputs
 import java.awt.Robot
 import java.awt.event.KeyEvent
 
@@ -80,40 +81,17 @@ fun main() {
             }
             println("Finished spamming!")
         }
-        "3b" -> {
-            while (true) {
-                println("Type --list for command list")
-                Thread.sleep(500)
-                print("Type message to send (or 'exit'): ")
-                val input = readlnOrNull() ?: break
-                when(input) {
-                    "--list" -> println(adbCommands)
-                    "home" -> AdbInput.homeButton()
-                    "recent" -> AdbInput.recentButton()
-                    "back" -> AdbInput.backButton()
-                    "switch" -> AdbInput.switchApp()
-                    "next", ">" -> AdbInput.nextButton()
-                    "prev", "<" -> AdbInput.prevButton()
-                    "up" -> AdbInput.upButton()
-                    "down" -> AdbInput.downButton()
-                    "enter" -> AdbInput.sendEnter()
-                    "write" -> {
-                        if (input.lowercase() == "exit") break
-                        print("Write message: ")
-                        val writeInput = readlnOrNull() ?: break
-
-                        AdbInput.sendText(writeInput)
-                        Thread.sleep(200)
-                        AdbInput.sendEnter()
-                        Thread.sleep(300)
-                    }
-                    "aMan" -> AdbInput.activityManager()
-                    "exit" -> break
-                    else -> {
-                        println("nah")
-                    }
-                }
+        "3a infinite" -> {
+            for (i in 1..2000) {
+                AdbInput.sendText(messageList.random())
+                Thread.sleep(200)
+                AdbInput.sendEnter()
+                Thread.sleep(300)
             }
+            println("Finished spamming!")
+        }
+        "3b" -> {
+            adbTerminalInputs()
         }
         "4" -> {
             println("Enter the number of times to send: ")
