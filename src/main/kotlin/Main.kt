@@ -5,6 +5,7 @@ import id.neotica.bot.pasteBot
 import id.neotica.bot.typeBot
 import id.neotica.bot.typeBot2
 import id.neotica.feature.adbTerminalInputs
+import id.neotica.feature.idiomaticAdbInputs
 import java.awt.Robot
 import java.awt.event.KeyEvent
 
@@ -14,6 +15,7 @@ fun main() {
     println("Enter 3 for adbInput")
     println("Enter 3a for default adbInput")
     println("Enter 3b for android Adb control")
+    println("Enter 3c for idiomatic android Adb control")
     println("Enter 4 for inputting using text and count")
     println("Enter the message to be sent: ")
     val message = readlnOrNull() ?: ""
@@ -92,6 +94,9 @@ fun main() {
         }
         "3b" -> {
             adbTerminalInputs()
+        }
+        "3c" -> {
+            idiomaticAdbInputs()
         }
         "4" -> {
             println("Enter the number of times to send: ")

@@ -36,6 +36,16 @@ object AdbInput {
     fun upButton() = exec("adb shell input keyevent 19")
     fun downButton() = exec("adb shell input keyevent 20")
 
+    fun backspaceButton() = exec("adb shell input keyevent 67")
+    fun tabButton() = exec("adb shell input keyevent 61")
+    fun selectAll() = exec("adb shell input keycombination 113 29")
+    fun shiftTab() = exec("adb shell input keycombination 59 61")
+
+    fun touchInput(x: Int, y: Int) = exec("adb shell input tap $x $y")
+    fun holdInputTime(
+        startX: Int, startY: Int, endX: Int? = startX, endY: Int? = startY, time: Int?= 500
+    ) = exec("adb shell input swipe $startX $startY $endX $endY $time")
+
     fun activityManager() {
         exec("adb shell am start -a android.intent.action.VIEW")
     }

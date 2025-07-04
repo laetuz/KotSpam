@@ -87,7 +87,7 @@ val messageList = listOf(
     defaultMessage9,
 )
 
-val adbCommands = "" +
+const val adbCommands = "" +
         "1. home -> Go home" + "\n" +
         "2. switch -> Go to recent apps" + "\n" +
         "3. back -> Navigate up" + "\n" +
@@ -96,4 +96,11 @@ val adbCommands = "" +
         "6. up -> Up arrow" + "\n" +
         "7. down -> down arrow" + "\n" +
         "8. enter -> press enter" + "\n" +
-        "9. write -> write on the ime" + "\n"
+        "9. w \$write here -> write on the ime" + "\n" +
+        "10. bs -> backspace" + "\n" +
+        "11. fs -> force close an app" + "\n" +
+        "12. midtap -> tap the center of the screen" + "\n" +
+        "13. sup -> swipe up" + "\n" +
+        "14. sdown -> swipe down" + "\n" +
+        "15. sleft -> swipe left" + "\n" +
+        "16. sright -> swipe right" + "\n"
